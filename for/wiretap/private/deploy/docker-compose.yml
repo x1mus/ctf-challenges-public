@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  wiretap:
+    build:
+      context: ./app
+    ports:
+      - "8080:8080"
+    environment:
+      FLAG: "${FLAG:-CSC{H0pefully_Cl4ud3_d1dnt_s0lve_1t!_adb_l0gg3r?_n0_encryp710n_d113ead8b78da996}}"

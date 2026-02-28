@@ -1,0 +1,55 @@
+<ActivityLayout>:
+	password: password
+	result: result
+
+	cols:1
+	spacing: 10
+	padding: (100, 50)
+	canvas.before:
+		Color:
+			rgba: 1, 1, 1, 1
+		Rectangle:
+			size: self.size
+			pos: self.pos
+
+	Image:
+		source: 'kuriboh.png'
+		size_hint_y: None
+		height: 300
+		pos_hint: {'center_x': 0.5}
+
+	Label:
+		text: 'Password ?'
+		font_size: '20sp'
+		size_hint_y: None
+		height: 40
+		color: 0, 0, 0, 1
+
+	TextInput:
+		id: password
+		multiline: False
+		size_hint_y: None
+		font_size: '20sp'
+		height: 80
+		padding_y: (self.height - self.line_height) / 2
+
+	Button:
+		on_press: root.submit()
+		text: 'Submit'
+		size_hint_y: None
+		height: 80
+
+	Label:
+		id: result
+		text: ''
+		size_hint_y: None
+		height: 80
+		font_size: '12sp'
+		color: 0, 0, 0, 1
+		canvas.before:
+			Color:
+				rgba: 0.8, 0.8, 0.8, 1
+			RoundedRectangle:
+				size: self.size
+				pos: self.pos
+				radius: [2,]
