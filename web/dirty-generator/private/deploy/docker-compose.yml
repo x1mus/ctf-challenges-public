@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  dirty-generator:
+    build:
+      context: ./app
+    ports:
+      - "8080:8080"
+    environment:
+      FLAG: "${FLAG:-CSC{im_r34lly_1mpr3ssed!_y0u_d1d_it_dirty?!_03e97a90baf03e2c}}"

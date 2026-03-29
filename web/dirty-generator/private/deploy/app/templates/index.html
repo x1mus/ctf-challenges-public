@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>QR <em>Generator</em></h1>
+            <p>Upload a file to receive its SHA-256 as a QR code</p>
+        </div>
+
+        <div class="card">
+            {% if error %}
+                <div class="alert alert-error">{{ error }}</div>
+            {% endif %}
+
+            <form method="POST" enctype="multipart/form-data">
+                <div class="drop-zone" id="dropZone">
+                    <input type="file" name="file" id="fileInput" onchange="updateLabel(this)">
+                    <span class="drop-icon">↑</span>
+                    <div class="drop-label">Drop your file here or <strong>browse</strong></div>
+                    <div class="filename-display" id="filenameDisplay"></div>
+                </div>
+                <button type="submit" class="btn-submit">Generate QR Code</button>
+            </form>
+
+            {% if qr %}
+                <div class="qr-result">
+                    <p>Your QR code</p>
+                    <img src="data:image/png;base64,{{ qr }}" alt="QR Code">
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="footer">Most file types accepted</div>
+    </div>
+
+    <script>
+        function updateLabel(input) {
+            const display = document.getElementById('filenameDisplay');
+            const zone = document.getElementById('dropZone');
+            if (input.files[0]) {
+                display.textContent = input.files[0].name;
+                zone.classList.add('has-file');
+            } else {
+                display.textContent = '';
+                zone.classList.remove('has-file');
+            }
+        }
+    </script>
+</body>
+</html>
