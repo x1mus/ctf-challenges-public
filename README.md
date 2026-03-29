@@ -9,6 +9,7 @@ This repository contains all the ctf challenges I've created and have already be
 |Web|[Dirty Generator](web/dirty-generator)|🔴|CSCBE|Final|2026|0|33|
 |Mobile|[Summoned Skull](mobile/summoned-skull)|🟡|CSCBE|Final|2026|25|33|
 |Mobile|[Dark Magician](mobile/dark-magician)|🟠|CSCBE|Final|2026|15|33|
+|Misc|[Glitchin'](misc/glitchin)|🟡|CSCBE|Final|2026|23|33|
 
 Legend:
 - 🟢: Easy
