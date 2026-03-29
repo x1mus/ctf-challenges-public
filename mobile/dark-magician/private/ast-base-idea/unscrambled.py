@@ -1,0 +1,168 @@
+
+def check_flag(message):
+    encoded = [
+        101,
+        8,
+        161,
+        11,
+        243,
+        127,
+        253,
+        79,
+        176,
+        23,
+        243,
+        142,
+        164,
+        11,
+        144,
+        243,
+        65,
+        12,
+        143,
+        87,
+        243,
+        90,
+        196,
+        123,
+        211,
+        176,
+        243,
+        8,
+        243,
+        88,
+        164,
+        227,
+        8,
+        92,
+        87,
+        243,
+        128,
+        243,
+        28,
+        142,
+        243,
+        24,
+        12,
+        24,
+        132,
+        156,
+        252,
+        11,
+        128,
+        12,
+        219,
+        253,
+        88,
+        87,
+        217,
+        88,
+        132,
+    ]
+    if len(message) != len(encoded):
+        return False
+    for (i, letter) in enumerate(message):
+        searchme = ord(letter)
+        searchme = (searchme + 499) % 256
+        searchme = (searchme >> 2 | searchme << 6) % 256
+        searchme = searchme * 31 % 256
+        searchme = searchme * 487 % 256
+        searchme = searchme * 809 % 256
+        searchme = searchme * 661 % 256
+        searchme = searchme * 977 % 256
+        searchme = (searchme >> 4 | searchme << 4) % 256
+        searchme = (searchme + 184) % 256
+        searchme = (searchme << 6 | searchme >> 2) % 256
+        searchme = (searchme << 2 | searchme >> 6) % 256
+        searchme = (searchme ^ 103) % 256
+        searchme = (searchme + 713) % 256
+        searchme = (searchme + 929) % 256
+        searchme = (searchme ^ 111) % 256
+        searchme = searchme * 947 % 256
+        searchme = (searchme + 628) % 256
+        searchme = (searchme + 61) % 256
+        searchme = searchme * 29 % 256
+        searchme = (searchme >> 6 | searchme << 2) % 256
+        searchme = (searchme ^ 240) % 256
+        searchme = (searchme << 3 | searchme >> 5) % 256
+        searchme = (searchme ^ 535) % 256
+        searchme = (searchme << 4 | searchme >> 4) % 256
+        searchme = (searchme >> 4 | searchme << 4) % 256
+        searchme = searchme * 349 % 256
+        searchme = (searchme >> 6 | searchme << 2) % 256
+        searchme = (searchme + 391) % 256
+        searchme = (searchme + 268) % 256
+        searchme = searchme * 61 % 256
+        searchme = (searchme ^ 116) % 256
+        searchme = (searchme + 657) % 256
+        searchme = (searchme ^ 818) % 256
+        searchme = (searchme >> 5 | searchme << 3) % 256
+        searchme = (searchme + 134) % 256
+        searchme = (searchme >> 3 | searchme << 5) % 256
+        searchme = searchme * 47 % 256
+        searchme = searchme * 149 % 256
+        searchme = (searchme >> 6 | searchme << 2) % 256
+        searchme = searchme * 179 % 256
+        searchme = (searchme >> 1 | searchme << 7) % 256
+        searchme = searchme * 83 % 256
+        searchme = (searchme - 93) % 256
+        searchme = searchme * 59 % 256
+        searchme = (searchme + 53) % 256
+        searchme = (searchme - 470) % 256
+        searchme = (searchme >> 3 | searchme << 5) % 256
+        searchme = (searchme << 4 | searchme >> 4) % 256
+        searchme = (searchme << 2 | searchme >> 6) % 256
+        searchme = (searchme - 702) % 256
+        searchme = (searchme - 321) % 256
+        searchme = (searchme << 5 | searchme >> 3) % 256
+        searchme = (searchme << 4 | searchme >> 4) % 256
+        searchme = (searchme + 219) % 256
+        searchme = (searchme + 979) % 256
+        searchme = (searchme >> 1 | searchme << 7) % 256
+        searchme = (searchme ^ 637) % 256
+        searchme = searchme * 277 % 256
+        searchme = searchme * 569 % 256
+        searchme = searchme * 43 % 256
+        searchme = (searchme >> 6 | searchme << 2) % 256
+        searchme = searchme * 139 % 256
+        searchme = (searchme + 689) % 256
+        searchme = (searchme >> 5 | searchme << 3) % 256
+        searchme = searchme * 13 % 256
+        searchme = searchme * 229 % 256
+        searchme = (searchme + 322) % 256
+        searchme = searchme * 31 % 256
+        searchme = (searchme ^ 219) % 256
+        searchme = (searchme >> 3 | searchme << 5) % 256
+        searchme = (searchme ^ 547) % 256
+        searchme = (searchme + 419) % 256
+        searchme = (searchme << 1 | searchme >> 7) % 256
+        searchme = searchme * 193 % 256
+        searchme = (searchme + 273) % 256
+        searchme = (searchme << 7 | searchme >> 1) % 256
+        searchme = (searchme >> 4 | searchme << 4) % 256
+        searchme = (searchme ^ 270) % 256
+        searchme = (searchme - 22) % 256
+        searchme = (searchme + 668) % 256
+        searchme = (searchme >> 3 | searchme << 5) % 256
+        searchme = searchme * 241 % 256
+        searchme = (searchme >> 3 | searchme << 5) % 256
+        searchme = (searchme ^ 356) % 256
+        searchme = (searchme >> 2 | searchme << 6) % 256
+        searchme = searchme * 313 % 256
+        searchme = (searchme << 7 | searchme >> 1) % 256
+        searchme = (searchme >> 6 | searchme << 2) % 256
+        searchme = (searchme << 3 | searchme >> 5) % 256
+        searchme = (searchme + 220) % 256
+        searchme = (searchme - 103) % 256
+        searchme = (searchme >> 4 | searchme << 4) % 256
+        searchme = searchme * 761 % 256
+        searchme = (searchme << 2 | searchme >> 6) % 256
+        searchme = (searchme ^ 356) % 256
+        searchme = searchme * 53 % 256
+        searchme = (searchme ^ 193) % 256
+        searchme = (searchme + 203) % 256
+        searchme = (searchme >> 2 | searchme << 6) % 256
+        searchme = searchme * 29 % 256
+        if searchme != encoded[i]:
+            return False
+    return True
