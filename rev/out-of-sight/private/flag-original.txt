@@ -1,0 +1,2 @@
+Hooray! You managed to beat the ransomware. Here is the super secret flag:
+CSC{p4ck1ng_0v3rl4ys_1s_s0_much_fun_1e743f6d7ebe0028}
